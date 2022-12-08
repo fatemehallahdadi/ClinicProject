@@ -2,6 +2,7 @@ package ir.mapsa.clinic.mapper;
 
 import ir.mapsa.clinic.dto.DepartmentDto;
 import ir.mapsa.clinic.entity.DepartmentEntity;
+import ir.mapsa.clinic.entity.DepartmentEntity.DepartmentEntityBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-12-05T16:28:46+0330",
+    date = "2022-12-08T10:31:32+0330",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.16.1 (Oracle Corporation)"
 )
 @Component
@@ -21,15 +22,13 @@ public class DepartmentMapperImpl implements DepartmentMapper {
             return null;
         }
 
-        DepartmentEntity departmentEntity = new DepartmentEntity();
+        DepartmentEntityBuilder departmentEntity = DepartmentEntity.builder();
 
-        departmentEntity.setCreatedDate( d.getCreatedDate() );
-        departmentEntity.setLastModifiedDate( d.getLastModifiedDate() );
-        departmentEntity.setId( d.getId() );
-        departmentEntity.setDescription( d.getDescription() );
-        departmentEntity.setName( d.getName() );
+        departmentEntity.id( d.getId() );
+        departmentEntity.description( d.getDescription() );
+        departmentEntity.name( d.getName() );
 
-        return departmentEntity;
+        return departmentEntity.build();
     }
 
     @Override

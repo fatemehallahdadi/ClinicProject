@@ -26,7 +26,10 @@ public class EmployeeIdDto extends BaseDto {
     private String email;
 
     private Gender gender;
-    //public Department department;
+
+    private Long departmentId;
 
     private Long roleId;
+
+
 }

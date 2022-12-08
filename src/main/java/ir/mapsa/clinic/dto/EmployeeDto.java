@@ -1,6 +1,8 @@
 package ir.mapsa.clinic.dto;
 
 import ir.mapsa.clinic.base.BaseDto;
+import ir.mapsa.clinic.entity.DepartmentEntity;
+import ir.mapsa.clinic.entity.ScheduleEntity;
 import ir.mapsa.clinic.entity.enums.Gender;
 import ir.mapsa.clinic.dto.RoleDto;
 import lombok.*;
@@ -27,11 +29,11 @@ public class EmployeeDto extends BaseDto {
     @NotBlank
     private String email;
     @NotNull
-    @Enumerated(EnumType.STRING)
     private Gender gender;
-    //public Department department;
+
+    public DepartmentEntity department;
 
     private Set<RoleDto> roles;
 
-    //private Schedule schedule;
+
 }

@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 
 
-@Transactional()
+@Transactional
 public class BaseServiceImpl<T extends BaseEntity,ID extends Serializable,
         R extends JpaRepository<T,ID>> implements BaseService<T,ID> {
 
@@ -23,7 +23,6 @@ public class BaseServiceImpl<T extends BaseEntity,ID extends Serializable,
     }
 
     @Override
-    @Transactional
     public T saveOrUpdate(T t) throws BaseException {
         return repository.save(t);
     }

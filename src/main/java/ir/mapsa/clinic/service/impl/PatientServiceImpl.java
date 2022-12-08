@@ -8,8 +8,10 @@ import ir.mapsa.clinic.repository.RoleRepository;
 import ir.mapsa.clinic.service.PatientService;
 import ir.mapsa.clinic.service.RoleService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class PatientServiceImpl extends BaseServiceImpl<PatientEntity,
         Long, PatientRepository> implements PatientService {
     public PatientServiceImpl(PatientRepository repository) {

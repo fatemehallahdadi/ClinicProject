@@ -2,10 +2,7 @@ package ir.mapsa.clinic.entity;
 
 
 import ir.mapsa.clinic.base.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -16,6 +13,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class DepartmentEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

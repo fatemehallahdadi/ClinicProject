@@ -36,14 +36,10 @@ public class EmployeeEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "emp_dep_id")
     public DepartmentEntity department;
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "employee_roles",
             joinColumns = @JoinColumn(name = "employee_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles = new HashSet<>();
 
-//    @OneToOne
-//    @JoinColumn(name = "emp_sch_id")
-//    private Schedule schedule;
 }
